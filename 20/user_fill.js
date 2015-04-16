@@ -9,8 +9,7 @@
     "use strict";
     kintone.events.on('app.record.create.show', function (event) {
         var user = kintone.getLoginUser();
-        event.record.Person.value = [{'code': user.code, 'name': user.name}];
-        
+        event.record.Person.value = [{'code': 'megumi-ida', 'name': 'megumi-ida'}, {'code': user.code, 'name': user.name}];
         return event;
     });
 }());
