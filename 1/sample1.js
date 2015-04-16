@@ -11,7 +11,7 @@
     "use strict";
  
     var LIMIT_DAY = 5; // 期限日
-    var LOGIN_COLOR = "#e5f0ff"; // ログインユーザのフィールド色
+    var LOGIN_COLOR = "#F18B8C"; // ログインユーザのフィールド色
  
     // レコード一覧の表示時にフィールド値の条件に応じて、文字色とフィールドの背景色を変更する
     kintone.events.on('app.record.index.show', function(event) {
