@@ -10,7 +10,9 @@
     // レコード一覧の表示時にフィールドの背景色を変更する
     kintone.events.on('app.record.index.show', function (event) {
             // ログインユーザのフィールド色
-        var fieldColor = '#e5f0ff',
+            //var fieldColors = ["#87cefa", "#adff2f", "#ffd700", "#ff6347", "#d3d3d3","#4b0082"];
+            var fieldColor = "#e5f0ff",
+            //fieldColors[Math.floor(Math.random() * 6)];
             // 一覧の要素を取得
             elCustomer = kintone.app.getFieldElements('Customer'),
             elStatus = kintone.app.getFieldElements('Status'),
@@ -20,13 +22,15 @@
             elLimitDay = kintone.app.getFieldElements('LimitDay'),
             i;
   
-        for (i = 1; i < event.records.length; i = i+2) {
-            elCustomer[i].style.backgroundColor = fieldColor;
-            elStatus[i].style.backgroundColor = fieldColor;
-            elPerson[i].style.backgroundColor = fieldColor;
-            elQType[i].style.backgroundColor = fieldColor;
-            elDetail[i].style.backgroundColor = fieldColor;
-            elLimitDay[i].style.backgroundColor = fieldColor;
-       }
+        for (i = 0; i < event.records.length; i++) {
+            if (i % 2 == 1) {
+                elCustomer[i].style.backgroundColor = fieldColor;
+                elStatus[i].style.backgroundColor = fieldColor;
+                elPerson[i].style.backgroundColor = fieldColor;
+                elQType[i].style.backgroundColor = fieldColor;
+                elDetail[i].style.backgroundColor = fieldColor;
+                elLimitDay[i].style.backgroundColor = fieldColor;
+            }
+        }
     });
 }());
