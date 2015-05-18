@@ -34,11 +34,11 @@
         if (past.length === 0) {
             kintone.app.record.setFieldShown('other', false);
         }
-         
-        //1問目で「その他」が選択された場合は「その他」フィールドを表示する
+      
+        //1問目で「インフルエンザ」が選択された場合は「その他」フィールドを表示する
         var i;
         for (i = 0; i < past.length; i++) {
-            if (past[i] === 'その他') {
+            if (past[i] === 'インフルエンザ') {
                 kintone.app.record.setFieldShown('other', true);
             } else {
                 kintone.app.record.setFieldShown('other', false);
