@@ -15,6 +15,11 @@
     ];
     kintone.events.on(events, function (event) {
         var size = event.record.Person.value.length;
+        if (size >= 6) {
+            var record = event.record;
+            record.Person.error = '対応担当者は5人までです。';
+        }
+        
         //対応担当者に6人より多く登録しようとすると
         //'対応担当者は5人までです。' というエラーを表示
         return event;
