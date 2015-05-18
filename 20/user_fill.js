@@ -5,10 +5,10 @@
 /*jslint nomen: true, devel: true, browser: true, vars: true, plusplus: true*/
 /*global 'kintone': false */
 (function () {
-  
     "use strict";
     kintone.events.on('app.record.create.show', function (event) {
-        event.record.Person.value = [{'code': 'shiori-takahashi', 'name': '高橋 栞'}];
+        var user = kintone.getLoginUser();
+        event.record.Person.value = [{'code': user.code, 'name': user.name }];
         
         return event;
     });
